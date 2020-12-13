@@ -32,54 +32,54 @@
       <!-- Timeblocks go here -->
     <div class="row">
       <div class= "hour col-1"> 9am </div>
-      <div class= "time-block textarea col-10 description past"></div>
-      <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon" ></button>
+      <div class= "time-block textarea col-10 description "></div>
+      <button type="button" class= "fas fa-save saveBtn col-1 saveBtn i:hover saveIcon" ></button>
       </div>
     
     <div class="row">
       <div class= "hour col-1"> 10am </div>
-      <div class= "time-block textarea col-10 past"></div>
-      <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
+      <div class= "time-block textarea col-10 "></div>
+      <button type="button" class= "fas fa-save saveBtn col-1 saveBtn i:hover saveIcon"></button>
       </div>
     
     <div class="row">
       <div class= "hour col-1"> 11am </div>
-      <div class= "time-block textarea  col-10 future"></div>
+      <div class= "time-block textarea  col-10 "></div>
       <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
       
     </div>
     <div class="row">
       <div class= "hour col-1"> 12am </div>
-      <div class= "time-block textarea col-10 future"></div>
+      <div class= "time-block textarea col-10 "></div>
       <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
 
     </div>
     <div class="row">
       <div class= "hour col-1"> 1pm </div>
-      <div class= "time-block textarea col-10 future"></div>
+      <div class= "time-block textarea col-10 "></div>
       <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
       </div>
     
     <div class="row">
       <div class= "hour col-1"> 2pm </div>
-      <div class= "time-block textarea col-10 future"></div>
+      <div class= "time-block textarea col-10 "></div>
       <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
       </div>
     
     <div class="row">
       <div class= "hour col-1"> 3pm </div>
-      <div class= "time-block textarea col-10 future"></div>
+      <div class= "time-block textarea col-10 "></div>
       <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
       </div>
       <div class="row">
         <div class= "hour col-1"> 4pm </div>
-        <div class= "time-block textarea col-10 future"></div>
+        <div class= "time-block textarea col-10 "></div>
         <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
         </div>
       
       <div class="row">
         <div class= "hour col-1"> 5pm </div>
-        <div class= "time-block textarea col-10 future"></div>
+        <div class= "time-block textarea col-10 "></div>
         <button type="button" class= "fas fa-save saveBtn col-1 savrBtn i:hover saveIcon"></button>
         </div>
       </div>
@@ -88,17 +88,50 @@
 
   <script>
    
-    
-    // let currentDay = document.getElementById('currentDay')
-    // currentDay.textContent = JSON.stringify(DateTime.local);
-    let DateTime = luxon.DateTime;
-
-    let today = DateTime.local();
-
-    console.log(today)
+  
+  
+ 
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="../Assets/luxon.min.js"></script> 
+    <script src="lib/moment/moment.min.js"></script> 
+
+    <script>
+       $(document).ready(function(){
+       
+       
+        const m = moment();
+
+        console.log(m.toString());
+
+        $("#currentDay").text(m.format("dddd MMM Mo YY"))
+
+        //Adding button event listener 
+        $(".saveButton").on("click", function(){
+
+
+        })
+
+        $(".textarea").on("click", function(e){
+          // var eventContent = $("<p>");
+            $(this).append("<input />");
+  
+  $("input").css({ left: + e.pageX, top: + e.pageY });
+  
+  $('input').focus(this);
+            
+        })
+
+        
+
+
+
+
+       })
+       
+
+       $
+    
+    </script>
   </body>
 </html>
